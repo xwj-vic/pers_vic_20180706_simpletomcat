@@ -2,14 +2,16 @@ package pers.vic.httpserver.entity;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 /**
  * Create By Vic Xu on 7/6/2018
+ * @author Administrator
  */
 @Data
 @NoArgsConstructor
-public class BooksEntity {
+public class BooksEntity implements Serializable {
 
 
     public BooksEntity(String bookName, String price, String author) {

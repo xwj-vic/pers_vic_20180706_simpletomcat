@@ -33,13 +33,13 @@ function getData(h) {
     idCell.innerHTML = h.id;
     var nameCell = document.createElement('td');
     row.appendChild(nameCell);
-    nameCell.innerHTML = h.bookName;
+    nameCell.innerHTML = decodeURI(h.bookName);
     var priceCell = document.createElement('td');
     row.appendChild(priceCell);
     priceCell.innerHTML = h.price;
     var authorCell = document.createElement('td');
     row.appendChild(authorCell);
-    authorCell.innerHTML = h.author;
+    authorCell.innerHTML = decodeURI(h.author);
     var operationCell = document.createElement('td');
     row.appendChild(operationCell);
     //创建按钮
@@ -85,3 +85,4 @@ function del(btn, id) {
         xmlhttp.send();
     };
 }
+
