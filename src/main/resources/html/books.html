@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="css/bookList.css"/>
+</head>
+<body>
+<form id="addBookForm" action="/books" method="post">
+    BookName: <input type="text" name="bookName">&nbsp;&nbsp;
+    author: <input type="text" name="author">&nbsp;&nbsp;
+    price: <input type="text" name="price">&nbsp;&nbsp;
+    <input id="submit" type="submit" value="Add and Submit">
+</form><br><br>
+<div id="bookListId">
+    <table id="booktable">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>bookName</th>
+                <th>price</th>
+                <th>author</th>
+                <th>operation</th>
+            </tr>
+        </thead>
+        <tbody id = "tbBooks"></tbody>
+    </table>
+</div>
+<div id="content"></div>
+<script type="text/javascript" src="js/books.js"></script>
+</body>
+</html>
