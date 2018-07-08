@@ -15,7 +15,7 @@ public class BooksMap {
     public static void initBooks() {
         books = new ConcurrentHashMap<>(16);
         for (int i = 0; i < 100; i++) {
-            BooksEntity book = new BooksEntity("Book" + i, String.valueOf(Math.ceil(Math.random() * 100 + 10)), "author" + i);
+            BooksEntity book = new BooksEntity("Book" + i, Math.ceil(Math.random() * 100 + 10), "author" + i);
             books.put(book.getId(), book);
         }
     }

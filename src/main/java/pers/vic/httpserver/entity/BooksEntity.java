@@ -14,7 +14,7 @@ import java.util.UUID;
 public class BooksEntity implements Serializable {
 
 
-    public BooksEntity(String bookName, String price, String author) {
+    public BooksEntity(String bookName, double price, String author) {
         this.id = UUID.randomUUID().toString();
         this.bookName = bookName;
         this.price = price;
@@ -25,7 +25,7 @@ public class BooksEntity implements Serializable {
 
     private String bookName;
 
-    private String price;
+    private double price;
 
     private String author;
 }

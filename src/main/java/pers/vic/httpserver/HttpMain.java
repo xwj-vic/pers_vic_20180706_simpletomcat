@@ -16,6 +16,7 @@ public class HttpMain {
     public static void main(String[] args) {
         BooksMap.initBooks();
         ResourceList.initUrlList();
+        ResourceList.initUrlSuffixList();
         ResourceList.initRedirectMap();
         ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("http-pool-%d").build();
         ExecutorService pool = new ThreadPoolExecutor(20, 200, 5,

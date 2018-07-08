@@ -38,9 +38,9 @@ public class HttpServer {
             String[] content = spilts(s, "\r\n");
             Map<String, String> map = getKeyPoint(content);
             HttpRequest httpRequest = new HttpRequest(socket);
-            if (map.get("url").contains(".")) {
+            if (ResourceList.hasSuffix(map.get("url"))) {
                 fileRender(map.get("url"), httpRequest);
-            } else if (ResourceList.urlAccess(map.get("url"))) {
+            } else if (ResourceList.urlAccess(map.get("url")) && !map.get("url").contains(".")) {
                 bookHandle(map, httpRequest);
             } else {
                 httpRequest.doExceptionRequest("404");
@@ -61,7 +61,7 @@ public class HttpServer {
                     String[] item = spilts(s, "=");
                     value.put(item[0], item[1]);
                 }
-                booksEntity = new BooksEntity(value.get("bookName"), value.get("price"), value.get("author"));
+                booksEntity = new BooksEntity(value.get("bookName"), Double.valueOf(value.get("price")), value.get("author"));
                 if (value.containsKey("id")) {
                     booksEntity.setId(value.get("id"));
                 }
