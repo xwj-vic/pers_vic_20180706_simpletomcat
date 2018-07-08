@@ -1,9 +1,9 @@
-package pers.vic.httpserver;
+package pers.vic.simpletomcat;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import pers.vic.httpserver.data.BooksMap;
-import pers.vic.httpserver.data.ResourceList;
-import pers.vic.httpserver.thread.MyServerThread;
+import pers.vic.simpletomcat.data.BooksMap;
+import pers.vic.simpletomcat.data.ResourceList;
+import pers.vic.simpletomcat.thread.MyServerThread;
 import java.util.concurrent.*;
 
 /**

@@ -1,4 +1,4 @@
-package pers.vic.httpserver.entity;
+package pers.vic.simpletomcat.entity;
 
 import lombok.*;
 

@@ -1,6 +1,6 @@
-package pers.vic.httpserver.data;
+package pers.vic.simpletomcat.data;
 
-import pers.vic.httpserver.entity.BooksEntity;
+import pers.vic.simpletomcat.entity.BooksEntity;
 
 import java.util.concurrent.ConcurrentHashMap;
 

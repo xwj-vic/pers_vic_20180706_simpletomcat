@@ -1,9 +1,9 @@
-package pers.vic.httpserver;
+package pers.vic.simpletomcat;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringUtils;
-import pers.vic.httpserver.data.BooksMap;
-import pers.vic.httpserver.entity.BooksEntity;
+import pers.vic.simpletomcat.data.BooksMap;
+import pers.vic.simpletomcat.entity.BooksEntity;
 
 import java.util.HashMap;
 import java.util.Map;

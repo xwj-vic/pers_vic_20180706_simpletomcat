@@ -1,4 +1,4 @@
-package pers.vic.httpserver.http;
+package pers.vic.simpletomcat.http;
 
 import java.io.*;
 import java.net.Socket;

@@ -1,8 +1,6 @@
-package pers.vic.httpserver.thread;
+package pers.vic.simpletomcat.thread;
 
-import pers.vic.httpserver.http.HttpServer;
-
-import java.io.IOException;
+import pers.vic.simpletomcat.http.HttpServer;
 
 
 /**

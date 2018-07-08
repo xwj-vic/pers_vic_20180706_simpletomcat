@@ -1,4 +1,4 @@
-package pers.vic.httpserver.command;
+package pers.vic.simpletomcat.command;
 
 
 /**

@@ -1,4 +1,4 @@
-package pers.vic.httpserver.http;
+package pers.vic.simpletomcat.http;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

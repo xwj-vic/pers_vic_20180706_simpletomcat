@@ -1,4 +1,4 @@
-package pers.vic.httpserver.data;
+package pers.vic.simpletomcat.data;
 
 import java.util.ArrayList;
 import java.util.HashMap;

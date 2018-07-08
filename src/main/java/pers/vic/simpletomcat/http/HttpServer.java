@@ -1,20 +1,18 @@
-package pers.vic.httpserver.http;
+package pers.vic.simpletomcat.http;
 
 import org.apache.commons.lang3.StringUtils;
-import pers.vic.httpserver.HttpCommandInvoker;
-import pers.vic.httpserver.HttpCommandReceiver;
-import pers.vic.httpserver.command.DeleteRequest;
-import pers.vic.httpserver.command.GetRequest;
-import pers.vic.httpserver.command.PostRequest;
-import pers.vic.httpserver.command.PutRequest;
-import pers.vic.httpserver.data.ResourceList;
-import pers.vic.httpserver.entity.BooksEntity;
+import pers.vic.simpletomcat.HttpCommandInvoker;
+import pers.vic.simpletomcat.HttpCommandReceiver;
+import pers.vic.simpletomcat.command.DeleteRequest;
+import pers.vic.simpletomcat.command.GetRequest;
+import pers.vic.simpletomcat.command.PostRequest;
+import pers.vic.simpletomcat.command.PutRequest;
+import pers.vic.simpletomcat.data.ResourceList;
+import pers.vic.simpletomcat.entity.BooksEntity;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
