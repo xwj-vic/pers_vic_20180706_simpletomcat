@@ -16,7 +16,6 @@ function getBooks() {
             var result = xmlhttp.responseText;
             // var json = eval('(' + result + ')');
             var json = JSON.parse(result);
-            console.log(json);
             for (var k in json) {
                 tbody.appendChild(getData(json[k]));
             }

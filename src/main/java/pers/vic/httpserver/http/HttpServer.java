@@ -24,8 +24,6 @@ import java.util.Map;
  * @author Administrator
  */
 public class HttpServer {
-    private static final String BASE_PATH = "src/main/resources";
-    private static final String HTML_PATH = BASE_PATH + "/html";
 
     public void server() throws IOException {
         ServerSocket server = new ServerSocket(9999);
@@ -164,9 +162,9 @@ public class HttpServer {
     private String getPath(String s) {
         String path;
         if (s.contains("html")) {
-            path = HttpServer.HTML_PATH + s;
+            path = HttpRequest.HTML_PATH + s;
         } else {
-            path = HttpServer.BASE_PATH + s;
+            path = HttpRequest.BASE_PATH + s;
         }
         return path;
     }

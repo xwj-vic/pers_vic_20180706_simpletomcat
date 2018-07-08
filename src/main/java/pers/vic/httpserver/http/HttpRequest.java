@@ -14,8 +14,8 @@ import java.util.Objects;
 @Data
 @AllArgsConstructor
 public class HttpRequest {
-    private static final String BASE_PATH = "src/main/resources";
-    private static final String HTML_PATH = BASE_PATH + "/html";
+    public static final String BASE_PATH = "src/main/resources";
+    public static final String HTML_PATH = BASE_PATH + "/html";
 
     private Socket socket;
 
