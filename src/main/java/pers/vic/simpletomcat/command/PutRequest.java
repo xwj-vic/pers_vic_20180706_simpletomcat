@@ -1,7 +1,5 @@
 package pers.vic.simpletomcat.command;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import pers.vic.simpletomcat.reveiver.CommandReceiver;
 
 import java.util.Map;
@@ -9,16 +7,16 @@ import java.util.Map;
 /**
  * Create by Vic Xu on 2018/7/6
  */
-@Data
-@AllArgsConstructor
-public class PutRequest implements HttpCommand {
 
-    private CommandReceiver commandReceiver;
+public class PutRequest extends BaseRequestCommand implements HttpCommand {
+    public PutRequest(CommandReceiver commandReceiver, Map<String, String> map) {
+        super(commandReceiver, map);
+    }
 
-    private Map<String, String> map;
 
     @Override
-    public String Execute() {
+    public String execute() {
         return commandReceiver.exectPut(map);
     }
+
 }

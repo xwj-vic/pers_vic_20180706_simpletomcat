@@ -1,8 +1,5 @@
 package pers.vic.simpletomcat.http;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.io.*;
 import java.net.Socket;
 import java.util.Date;
@@ -11,13 +8,16 @@ import java.util.Objects;
 /**
  * Create by Vic Xu on 2018/7/7
  */
-@Data
-@AllArgsConstructor
+
 public class HttpRequest {
     public static final String BASE_PATH = "src/main/resources";
     public static final String HTML_PATH = BASE_PATH + "/html";
 
     private Socket socket;
+
+    public HttpRequest(Socket socket) {
+        this.socket = socket;
+    }
 
     void doRequestUtil(String json, String host) {
         PrintStream print = null;
@@ -119,4 +119,11 @@ public class HttpRequest {
         }
     }
 
+    public Socket getSocket() {
+        return socket;
+    }
+
+    public void setSocket(Socket socket) {
+        this.socket = socket;
+    }
 }

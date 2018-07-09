@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * Create By Vic Xu on 7/9/2018
+ * feature information
  */
 public class HttpKeyPointUtil {
     public Map<String, String> getKeyPoint(String[] s) {

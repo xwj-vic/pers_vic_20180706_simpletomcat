@@ -1,8 +1,6 @@
 package pers.vic.simpletomcat.command;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import pers.vic.simpletomcat.reveiver.CommandReceiver;
 
 import java.util.Map;
@@ -10,16 +8,16 @@ import java.util.Map;
 /**
  * Create by Vic Xu on 2018/7/6
  */
-@Data
-@AllArgsConstructor
-public class DeleteRequest implements HttpCommand {
 
-    private CommandReceiver commandReceiver;
+public class DeleteRequest extends BaseRequestCommand implements HttpCommand {
 
-    private Map<String, String> map;
+
+    public DeleteRequest(CommandReceiver commandReceiver, Map<String, String> map) {
+        super(commandReceiver, map);
+    }
 
     @Override
-    public String Execute() {
+    public String execute() {
         return commandReceiver.exectRemove(map);
     }
 }

@@ -1,7 +1,5 @@
 package pers.vic.simpletomcat.command;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import pers.vic.simpletomcat.reveiver.CommandReceiver;
 
 import java.util.Map;
@@ -11,16 +9,13 @@ import java.util.Map;
  *
  * @author Administrator
  */
-@Data
-@AllArgsConstructor
-public class GetRequest implements HttpCommand {
-
-    private CommandReceiver commandReceiver;
-
-    private Map<String, String> map;
+public class GetRequest extends BaseRequestCommand implements HttpCommand {
+    public GetRequest(CommandReceiver commandReceiver, Map<String, String> map) {
+        super(commandReceiver, map);
+    }
 
     @Override
-    public String Execute() {
+    public String execute() {
         return commandReceiver.execteGet(map);
     }
 }

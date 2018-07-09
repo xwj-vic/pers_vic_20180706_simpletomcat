@@ -13,7 +13,6 @@ import java.util.Map;
  * Create by Vic Xu on 2018/7/6
  *
  * @author Administrator
- *
  */
 
 public class BooksCommandReceiver implements CommandReceiver {
@@ -38,6 +37,7 @@ public class BooksCommandReceiver implements CommandReceiver {
 
     @Override
     public String exectPut(Map<String, String> map) {
+        Map<String, String> msg = new HashMap<>(16);
         BooksEntity booksEntity = null;
         if (map.containsKey("info")) {
             String[] infos = HttpKeyPointUtil.spilts(map.get("info"), "&");
@@ -48,10 +48,14 @@ public class BooksCommandReceiver implements CommandReceiver {
             }
             booksEntity = new BooksEntity(value.get("bookName"), Double.valueOf(value.get("price")), value.get("author"));
             if (value.containsKey("id")) {
-                booksEntity.setId(value.get("id"));
+                if (BooksMap.getBookWithId(value.get("id")) != null) {
+                    booksEntity.setId(value.get("id"));
+                } else {
+                    msg.put("msg", "Can not find this book");
+                    return JSON.toJSONString(msg);
+                }
             }
         }
-        Map<String, String> msg = new HashMap<>(16);
         if (BooksMap.put(booksEntity)) {
             msg.put("msg", "SUCCESS");
             return JSON.toJSONString(msg);
