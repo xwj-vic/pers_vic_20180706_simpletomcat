@@ -3,7 +3,9 @@ package pers.vic.simpletomcat.command;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import pers.vic.simpletomcat.HttpCommandReceiver;
+import pers.vic.simpletomcat.reveiver.CommandReceiver;
+
+import java.util.Map;
 
 /**
  * Create by Vic Xu on 2018/7/6
@@ -12,12 +14,12 @@ import pers.vic.simpletomcat.HttpCommandReceiver;
 @AllArgsConstructor
 public class DeleteRequest implements HttpCommand {
 
-    private HttpCommandReceiver commandReceiver;
+    private CommandReceiver commandReceiver;
 
-    private String id;
+    private Map<String, String> map;
 
     @Override
     public String Execute() {
-        return commandReceiver.exectRemove(this.id);
+        return commandReceiver.exectRemove(map);
     }
 }

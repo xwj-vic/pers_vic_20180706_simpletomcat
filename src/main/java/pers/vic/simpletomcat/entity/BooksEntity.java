@@ -7,6 +7,7 @@ import java.util.UUID;
 
 /**
  * Create By Vic Xu on 7/6/2018
+ *
  * @author Administrator
  */
 @Data

@@ -2,8 +2,9 @@ package pers.vic.simpletomcat.command;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import pers.vic.simpletomcat.HttpCommandReceiver;
-import pers.vic.simpletomcat.entity.BooksEntity;
+import pers.vic.simpletomcat.reveiver.CommandReceiver;
+
+import java.util.Map;
 
 /**
  * Create by Vic Xu on 2018/7/6
@@ -14,12 +15,12 @@ import pers.vic.simpletomcat.entity.BooksEntity;
 @AllArgsConstructor
 public class PostRequest implements HttpCommand {
 
-    private HttpCommandReceiver commandReceiver;
+    private CommandReceiver commandReceiver;
 
-    private BooksEntity booksEntity;
+    private Map<String, String> map;
 
     @Override
     public String Execute() {
-        return commandReceiver.exectPut(booksEntity);
+        return commandReceiver.exectPut(map);
     }
 }

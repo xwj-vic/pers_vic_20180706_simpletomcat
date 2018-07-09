@@ -21,7 +21,7 @@ public class ResourceList {
     }
 
     public static void initRedirectMap() {
-        redirectMap.put("aaa.html", "https://www.baidu.com/");
+        redirectMap.put("aaa.html", "http://10.222.29.193:9001/index.html");
         redirectMap.put("bbb.html", "https://www.baidu.com/");
         redirectMap.put("ccc.html", "https://www.baidu.com/");
     }

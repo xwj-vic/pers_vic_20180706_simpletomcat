@@ -14,7 +14,6 @@ function getBooks() {
         if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
             var tbody = document.getElementById("tbBooks");
             var result = xmlhttp.responseText;
-            // var json = eval('(' + result + ')');
             var json = JSON.parse(result);
             for (var k in json) {
                 tbody.appendChild(getData(json[k]));
@@ -61,7 +60,7 @@ function search(btn, id) {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 var json = eval('(' + xmlhttp.responseText + ')');
-                alert("bookName:" + json.bookName + "    price:" + json.price + "    author:" + json.author);
+                alert("bookName:" + decodeURI(json.bookName) + "    price:" + json.price + "    author:" + decodeURI(json.author));
             }
         };
         xmlhttp.open("GET", "/books?id=" + id, true);
