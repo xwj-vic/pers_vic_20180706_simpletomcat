@@ -1,5 +1,7 @@
 package pers.vic.simpletomcat.http;
 
+import pers.vic.simpletomcat.data.BaseData;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +10,8 @@ import java.util.Map;
  * feature information
  */
 public class HttpKeyPointUtil {
-    public Map<String, String> getKeyPoint(String[] s) {
+
+    Map<String, String> getKeyPoint(String[] s) {
         Map<String, String> map = new HashMap<>(16);
         String[] firstLine = spilts(s[0], " ");
         map.put("request", firstLine[0]);
@@ -34,7 +37,7 @@ public class HttpKeyPointUtil {
     }
 
 
-    public String getContentType(String s) {
+    String getContentType(String s) {
         String type;
         String lastName = spilts(s, "\\.")[1];
         if ("html".equals(lastName)) {
@@ -49,12 +52,12 @@ public class HttpKeyPointUtil {
         return type;
     }
 
-    public String getPath(String s) {
+    String getPath(String s) {
         String path;
         if (s.contains("html")) {
-            path = HttpResponseBody.HTML_PATH + s;
+            path = BaseData.HTML_PATH + s;
         } else {
-            path = HttpResponseBody.BASE_PATH + s;
+            path = BaseData.BASE_PATH + s;
         }
         return path;
     }

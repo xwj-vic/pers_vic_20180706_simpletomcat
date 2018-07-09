@@ -18,11 +18,4 @@ public class HttpCommandInvoker {
         return httpCommand.execute();
     }
 
-    public HttpCommand getHttpCommand() {
-        return httpCommand;
-    }
-
-    public void setHttpCommand(HttpCommand httpCommand) {
-        this.httpCommand = httpCommand;
-    }
 }

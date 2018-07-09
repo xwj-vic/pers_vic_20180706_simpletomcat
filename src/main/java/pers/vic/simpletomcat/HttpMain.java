@@ -2,7 +2,9 @@ package pers.vic.simpletomcat;
 
 import pers.vic.simpletomcat.data.BooksMap;
 import pers.vic.simpletomcat.data.ResourceList;
+import pers.vic.simpletomcat.entity.ConnectInfo;
 import pers.vic.simpletomcat.http.HttpRequest;
+import pers.vic.simpletomcat.reveiver.BooksCommandReceiver;
 
 import java.io.IOException;
 
@@ -19,6 +21,6 @@ public class HttpMain {
         ResourceList.initUrlList();
         ResourceList.initUrlSuffixList();
         ResourceList.initRedirectMap();
-        new HttpRequest(9999).connect();
+        new HttpRequest(new ConnectInfo(9999, new BooksCommandReceiver())).connect();
     }
 }

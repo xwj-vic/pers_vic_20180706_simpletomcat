@@ -1,9 +1,12 @@
 package pers.vic.simpletomcat.thread;
 
+import pers.vic.simpletomcat.http.HttpKeyPointUtil;
+import pers.vic.simpletomcat.http.HttpResponse;
 import pers.vic.simpletomcat.reveiver.CommandReceiver;
-import pers.vic.simpletomcat.http.HttpServer;
 
+import java.io.InputStream;
 import java.net.Socket;
+import java.util.Objects;
 
 
 /**
@@ -25,27 +28,22 @@ public class MyServerThread implements Runnable {
 
     @Override
     public void run() {
-        HttpServer httpServer = new HttpServer();
         try {
-            httpServer.server(commandReceiver, socket);
+            InputStream inputStream = socket.getInputStream();
+            byte[] buf = new byte[2048 * 2048];
+            int len = inputStream.read(buf);
+            String s = null;
+            if (len != -1) {
+                s = new String(buf, 0, len);
+            }
+            String[] content = HttpKeyPointUtil.spilts(Objects.requireNonNull(s), "\r\n");
+            HttpResponse httpResponse = new HttpResponse(socket, commandReceiver, content);
+            httpResponse.response();
+            inputStream.close();
+            socket.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public CommandReceiver getCommandReceiver() {
-        return commandReceiver;
-    }
-
-    public void setCommandReceiver(CommandReceiver commandReceiver) {
-        this.commandReceiver = commandReceiver;
-    }
-
-    public Socket getSocket() {
-        return socket;
-    }
-
-    public void setSocket(Socket socket) {
-        this.socket = socket;
-    }
 }
