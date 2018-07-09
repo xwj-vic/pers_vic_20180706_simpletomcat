@@ -18,7 +18,7 @@ import java.util.Map;
 public class BooksCommandReceiver implements CommandReceiver {
 
     @Override
-    public String execteGet(Map<String, String> map) {
+    public String exectGet(Map<String, String> map) {
         String id = null;
         if (map.containsKey("parm")) {
             id = HttpKeyPointUtil.spilts(map.get("parm"), "=")[1];

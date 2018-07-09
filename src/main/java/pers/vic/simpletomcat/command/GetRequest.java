@@ -16,6 +16,6 @@ public class GetRequest extends BaseRequestCommand implements HttpCommand {
 
     @Override
     public String execute() {
-        return commandReceiver.execteGet(map);
+        return commandReceiver.exectGet(map);
     }
 }

@@ -19,7 +19,7 @@ public class HttpResponse {
 
     public void requestHandle(Map<String, String> map, HttpRequest httpRequest, CommandReceiver receiver) {
         try {
-            String result = null;
+            String result = "";
             switch (map.get("request")) {
                 case "GET":
                     result = new HttpCommandInvoker(new GetRequest(receiver, map)).action();
@@ -32,6 +32,8 @@ public class HttpResponse {
                     break;
                 case "DELETE":
                     result = new HttpCommandInvoker(new DeleteRequest(receiver, map)).action();
+                    break;
+                default:
                     break;
             }
             httpRequest.doRequestUtil(result, map.get("host"));
