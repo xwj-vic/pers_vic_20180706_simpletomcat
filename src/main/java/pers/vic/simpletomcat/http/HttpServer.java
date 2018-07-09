@@ -25,7 +25,7 @@ public class HttpServer {
         String[] content = HttpKeyPointUtil.spilts(s, "\r\n");
         HttpKeyPointUtil keyPointUtil = new HttpKeyPointUtil();
         Map<String, String> map = keyPointUtil.getKeyPoint(content);
-        HttpRequest httpRequest = new HttpRequest(socket);
+        HttpResponseBody httpRequest = new HttpResponseBody(socket);
         HttpResponse httpResponse = new HttpResponse();
         if (ResourceList.hasSuffix(map.get("url"))) {
             httpResponse.fileHandle(map.get("url"), httpRequest, keyPointUtil);

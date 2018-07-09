@@ -52,9 +52,9 @@ public class HttpKeyPointUtil {
     public String getPath(String s) {
         String path;
         if (s.contains("html")) {
-            path = HttpRequest.HTML_PATH + s;
+            path = HttpResponseBody.HTML_PATH + s;
         } else {
-            path = HttpRequest.BASE_PATH + s;
+            path = HttpResponseBody.BASE_PATH + s;
         }
         return path;
     }
